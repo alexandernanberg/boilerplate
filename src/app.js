@@ -1,3 +1,5 @@
+import 'babel-polyfill'
+
 import React from 'react'
 import { render } from 'react-dom'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
@@ -9,9 +11,7 @@ function App() {
     <Router>
       <div className="app">
         <Nav />
-        {routes.map(({ id, ...props }) => (
-          <Route {...props} key={id} />
-        ))}
+        {routes.map(props => <Route {...props} />)}
       </div>
     </Router>
   )

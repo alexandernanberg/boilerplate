@@ -4,13 +4,13 @@ import About from './pages/About'
 
 const routes = [
   {
-    id: shortid.generate(),
+    key: shortid.generate(),
     path: '/',
     exact: true,
     component: Home,
   },
   {
-    id: shortid.generate(),
+    key: shortid.generate(),
     path: '/about',
     component: About,
   },
