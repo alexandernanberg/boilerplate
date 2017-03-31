@@ -1,4 +1,3 @@
-const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPLugin = require('html-webpack-plugin');
 const OfflinePlugin = require('offline-plugin');
@@ -6,13 +5,13 @@ const OfflinePlugin = require('offline-plugin');
 const debug = process.env.NODE_ENV !== 'production';
 
 module.exports = {
-  context: path.join(__dirname, 'src'),
+  context: `${__dirname}/src`,
   devtool: debug ? 'inline-source-map' : 'source-map',
   entry: {
     app: './app.js',
   },
   output: {
-    path: path.join(__dirname, 'public'),
+    path: `${__dirname}/public`,
     filename: debug ? '[name].js' : '[name].[chunkhash].js',
     publicPath: '/',
   },
