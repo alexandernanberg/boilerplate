@@ -20,6 +20,6 @@ function App() {
 
 render(<App />, document.getElementById('app'))
 
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.NODE_ENV === 'production') {
   OfflinePluginRuntime.install();
 }
