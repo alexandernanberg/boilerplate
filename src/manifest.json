@@ -1,0 +1,8 @@
+{
+  "name": "minimal-react-boilerplate",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#ffffff"
+}
