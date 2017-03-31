@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPLugin = require('html-webpack-plugin');
+const OfflinePlugin = require('offline-plugin');
 
 const debug = process.env.NODE_ENV !== 'production';
 
@@ -80,5 +81,6 @@ module.exports = {
       mangle: true,
       sourcemap: true,
     }),
+    new OfflinePlugin(),
   ],
 };
