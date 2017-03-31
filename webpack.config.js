@@ -8,14 +8,7 @@ module.exports = {
   context: path.join(__dirname, 'src'),
   devtool: debug ? 'inline-source-map' : 'source-map',
   entry: {
-    main: './app.js',
-    vendor: [
-      'axios',
-      'react',
-      'react-dom',
-      'react-router-dom',
-      'shortid',
-    ],
+    app: './app.js',
   },
   output: {
     path: path.join(__dirname, 'public'),
@@ -23,8 +16,6 @@ module.exports = {
     publicPath: '/',
   },
   performance: {
-    maxAssetSize: 500000,
-    maxEntrypointSize: 500000,
     hints: false,
   },
   module: {
@@ -71,7 +62,12 @@ module.exports = {
       template: './index.html',
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      names: ['vendor', 'manifest'],
+      name: 'vendor',
+      minChunks: (module) => module.context && module.context.indexOf('node_modules') !== -1,
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'manifest',
+      minChunks: Infinity,
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
