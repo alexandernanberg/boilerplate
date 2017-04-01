@@ -8,6 +8,6 @@
 - [x] Service-worker
 - [x] App manifest
 - [x] HMR
+- [x] Icons
 - [ ] Styles
 - [ ] Static files
-
