@@ -15,9 +15,16 @@ const render = (Component) => {
 render(App)
 
 if (module.hot) {
-  module.hot.accept(() => { render(App) })
+  module.hot.accept('./components/App', () => { render(App) })
 }
 
 if (process.env.NODE_ENV === 'production') {
-  OfflinePluginRuntime.install()
+  OfflinePluginRuntime.install({
+    onUpdateReady: () => {
+      OfflinePluginRuntime.applyUpdate()
+    },
+    onUpdated: () => {
+      window.location.reload()
+    },
+  })
 }

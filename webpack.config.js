@@ -28,7 +28,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
-        use: 'babel-loader',
+        loader: 'babel-loader',
       },
       {
         test: /\.scss$/,
@@ -46,7 +46,7 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: {
+        loader: {
           loader: 'svg-sprite-loader',
           query: {
             name: '[name]',
@@ -93,6 +93,10 @@ module.exports = {
     ]),
     new OfflinePlugin({
       version: '[hash]',
+      AppCache: false,
+      ServiceWorker: {
+        events: true,
+      },
     }),
   ],
   devServer: {
