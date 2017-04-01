@@ -8,6 +8,7 @@
     "url": "https://github.com/alexandernanberg/minimal-react-boilerplate"
   },
   "scripts": {
+    "test": "eslint ./src",
     "start": "NODE_ENV=production node index.js",
     "clean": "find public -mindepth 1 -exec rm -rf {} + || exit 0",
     "build": "npm run clean && NODE_ENV=production webpack",
