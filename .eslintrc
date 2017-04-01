@@ -17,7 +17,7 @@
     "react"
   ],
   "rules": {
-    "semi": 0,
+    "semi": ["error", "never"],
     "react/jsx-filename-extension": 0,
     "react/prop-types": 0
   }
