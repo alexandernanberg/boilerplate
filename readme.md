@@ -7,6 +7,7 @@
 - [x] Routing
 - [x] Service-worker
 - [x] App manifest
+- [x] HMR
 - [ ] Styles
 - [ ] Static files
-- [ ] HMR
+
