@@ -7,9 +7,13 @@ const debug = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   context: `${__dirname}/src`,
-  devtool: debug ? 'inline-source-map' : 'source-map',
+  devtool: debug ? 'cheap-module-eval-source-map' : 'source-map',
   entry: {
-    app: './app.js',
+    app: [
+      'babel-polyfill',
+      'react-hot-loader/patch',
+      './client.js',
+    ],
   },
   output: {
     path: `${__dirname}/public`,
@@ -52,6 +56,7 @@ module.exports = {
     ],
   },
   plugins: debug ? [
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPLugin({
       template: './index.html',
@@ -84,10 +89,13 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: 'manifest.json' },
     ]),
-    new OfflinePlugin(),
+    new OfflinePlugin({
+      version: '[hash]',
+    }),
   ],
   devServer: {
     contentBase: `${__dirname}/src`,
     historyApiFallback: true,
+    hot: true,
   },
 };
