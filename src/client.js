@@ -12,7 +12,7 @@ const render = (Component) => {
   document.getElementById('app'))
 }
 
-render(App);
+render(App)
 
 if (module.hot) {
   module.hot.accept(() => { render(App) })

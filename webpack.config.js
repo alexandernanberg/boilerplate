@@ -1,9 +1,9 @@
-const webpack = require('webpack');
-const HtmlWebpackPLugin = require('html-webpack-plugin');
-const OfflinePlugin = require('offline-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack')
+const HtmlWebpackPLugin = require('html-webpack-plugin')
+const OfflinePlugin = require('offline-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
-const debug = process.env.NODE_ENV !== 'production';
+const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
   context: `${__dirname}/src`,
@@ -98,4 +98,4 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
   },
-};
+}
