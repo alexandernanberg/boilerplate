@@ -19,5 +19,5 @@ if (module.hot) {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  OfflinePluginRuntime.install();
+  OfflinePluginRuntime.install()
 }
