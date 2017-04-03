@@ -15,7 +15,7 @@
     "dev": "webpack-dev-server"
   },
   "dependencies": {
-    "axios": "^0.15.3",
+    "axios": "^0.16.0",
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
     "babel-plugin-transform-class-properties": "^6.23.0",
@@ -27,7 +27,7 @@
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.28.0",
     "express": "^4.15.2",
-    "file-loader": "^0.11.0",
+    "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
     "node-sass": "^4.5.2",
     "offline-plugin": "^4.6.2",
@@ -35,20 +35,20 @@
     "react-dom": "^15.4.2",
     "react-hot-loader": "next",
     "react-router-dom": "^4.0.0",
+    "reset-css": "^2.2.0",
     "sass-loader": "^6.0.3",
     "shortid": "^2.2.8",
     "style-loader": "^0.16.1",
     "svg-sprite-loader": "^0.3.0",
-    "webpack": "^2.3.2"
+    "webpack": "^2.3.3"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.1",
-    "eslint": "^3.18.0",
+    "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
-    "stylelint": "^7.9.0",
     "webpack-dev-server": "^2.4.2"
   }
 }
