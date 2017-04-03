@@ -9,5 +9,5 @@
 - [x] App manifest
 - [x] HMR
 - [x] Icons
-- [ ] Styles
+- [x] Styles
 - [ ] Static files
