@@ -1,12 +1,13 @@
 import React from 'react'
+import style from '../styles/components/icon.scss'
 
 const files = require.context('../assets/icons', false, /.svg$/)
 files.keys().forEach(files)
 
-export default function Icon({ name, ...props }) {
+export default function Icon({ type, ...props }) {
   return (
-    <svg {...props} className="icon">
-      <use xlinkHref={`#${name}`} />
+    <svg {...props} className={style.icon}>
+      <use xlinkHref={`#${type}`} />
     </svg>
   )
 }

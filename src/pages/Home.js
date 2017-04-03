@@ -1,5 +1,6 @@
 import React from 'react'
+import Icon from '../components/Icon'
 
 export default function Home() {
-  return <h1 style={{ textAlign: 'center' }}>Home.</h1>
+  return <h1 style={{ textAlign: 'center' }}><Icon type="triangle" /> Home.</h1>
 }
