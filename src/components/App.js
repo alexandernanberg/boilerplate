@@ -6,7 +6,7 @@ import routes from '../routes'
 export default function App() {
   return (
     <Router>
-      <div className="app">
+      <div>
         <Nav />
         {routes.map(props => <Route {...props} />)}
       </div>

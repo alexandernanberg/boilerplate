@@ -37,8 +37,10 @@ module.exports = {
           {
             loader: 'css-loader',
             query: {
+              minimize: true,
               importLoaders: 1,
-              minify: true,
+              modules: true,
+              localIdentName: '[name]__[local]--[hash:base64:5]',
             },
           },
           'sass-loader',

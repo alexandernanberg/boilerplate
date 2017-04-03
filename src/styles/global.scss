@@ -1,0 +1,59 @@
+@import '~reset-css/_reset';
+@import 'config';
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+body {
+  min-width: 320px;
+  cursor: default;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+}
+
+html {
+  font-family: Arial;
+  font-size: 10px;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+
+  & a {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+  }
+}
+
+b,
+strong {
+  font-weight: bold;
+  line-height: inherit;
+}
+
+i,
+em {
+  font-style: italic;
+  line-height: inherit;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
