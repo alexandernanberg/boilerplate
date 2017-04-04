@@ -7,7 +7,10 @@
     "type": "git",
     "url": "https://github.com/alexandernanberg/minimal-react-boilerplate"
   },
-  "browserslist": ["IE 11", "last 2 versions"],
+  "browserslist": [
+    "IE 11",
+    "last 2 versions"
+  ],
   "scripts": {
     "test": "eslint ./src",
     "start": "NODE_ENV=production node index.js",
