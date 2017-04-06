@@ -13,8 +13,7 @@
   text-decoration: none;
   color: map-get($colors , gray400);
 
-  &:hover,
-  &:focus {
+  &:hover {
     text-decoration: underline;
   }
 }
