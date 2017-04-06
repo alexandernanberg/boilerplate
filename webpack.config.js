@@ -114,5 +114,6 @@ module.exports = {
     contentBase: `${__dirname}/src`,
     historyApiFallback: true,
     hot: true,
+    stats: 'errors-only',
   },
 }
