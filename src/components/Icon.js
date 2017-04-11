@@ -5,10 +5,9 @@ import style from '../styles/components/icon.scss'
 const files = require.context('../assets/icons', false, /.svg$/)
 files.keys().forEach(files)
 
-const Icon = ({ type, ...props }) => (
+const Icon = ({ name, ...props }) =>
   <svg {...props} className={classNames(style.icon, props.className)}>
-    <use xlinkHref={`#${type}`} />
+    <use xlinkHref={`#${name}`} />
   </svg>
-)
 
 export default Icon

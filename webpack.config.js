@@ -98,9 +98,7 @@ module.exports = {
       sourcemap: true,
     }),
     new CopyWebpackPlugin([
-      {
-        from: 'manifest.json',
-      },
+      { from: 'manifest.json' },
     ]),
     new OfflinePlugin({
       version: '[hash]',
