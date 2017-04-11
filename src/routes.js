@@ -1,5 +1,5 @@
 import shortid from 'shortid'
-import Home from './pages/Home'
+import Index from './pages/Index'
 import About from './pages/About'
 
 const routes = [
@@ -7,7 +7,7 @@ const routes = [
     key: shortid.generate(),
     path: '/',
     exact: true,
-    component: Home,
+    component: Index,
   },
   {
     key: shortid.generate(),
