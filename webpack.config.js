@@ -2,6 +2,7 @@ const webpack = require('webpack')
 const HtmlWebpackPLugin = require('html-webpack-plugin')
 const OfflinePlugin = require('offline-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 
 const debug = process.env.NODE_ENV !== 'production'
@@ -68,6 +69,7 @@ module.exports = {
   },
   plugins: debug ? [
     new webpack.HotModuleReplacementPlugin(),
+    new FriendlyErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPLugin({
       template: './index.html',
@@ -112,6 +114,6 @@ module.exports = {
     contentBase: `${__dirname}/src`,
     historyApiFallback: true,
     hot: true,
-    stats: 'errors-only',
+    quiet: true,
   },
 }
