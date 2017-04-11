@@ -69,8 +69,8 @@ module.exports = {
   },
   plugins: debug ? [
     new webpack.HotModuleReplacementPlugin(),
-    new FriendlyErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
+    new FriendlyErrorsPlugin(),
     new HtmlWebpackPLugin({
       template: './index.html',
     }),
