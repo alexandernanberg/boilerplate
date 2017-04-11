@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Nav from './Nav'
+import Header from './Header'
 import routes from '../routes'
 
 const App = () =>
   <Router>
     <div>
-      <Nav />
+      <Header />
       { routes.map(props => <Route {...props} />) }
     </div>
   </Router>

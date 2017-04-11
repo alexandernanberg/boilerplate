@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px;
+  margin-bottom: 64px;
+}
