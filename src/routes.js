@@ -1,16 +1,16 @@
-import shortid from 'shortid'
+import { v4 } from 'node-uuid'
 import Index from './pages/Index'
 import About from './pages/About'
 
 const routes = [
   {
-    key: shortid.generate(),
+    key: v4(),
     path: '/',
     exact: true,
     component: Index,
   },
   {
-    key: shortid.generate(),
+    key: v4(),
     path: '/about',
     component: About,
   },
