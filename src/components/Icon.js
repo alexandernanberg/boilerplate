@@ -6,7 +6,7 @@ const files = require.context('../assets/icons', false, /.svg$/)
 files.keys().forEach(files)
 
 const Icon = ({ name, ...props }) =>
-  <svg {...props} className={classNames(style.icon, props.className)}>
+  <svg {...props} className={classNames(style.component, props.className)}>
     <use xlinkHref={`#${name}`} />
   </svg>
 

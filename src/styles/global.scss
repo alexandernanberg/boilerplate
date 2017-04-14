@@ -26,38 +26,4 @@ img {
   -ms-interpolation-mode: bicubic;
 }
 
-html {
-  font-family: Arial;
-  font-size: 10px;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-
-  & a {
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    font-style: inherit;
-  }
-}
-
-b,
-strong {
-  font-weight: bold;
-  line-height: inherit;
-}
-
-i,
-em {
-  font-style: italic;
-  line-height: inherit;
-}
-
-h1 {
-  font-size: 3.2rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
+@import 'base/typography';
