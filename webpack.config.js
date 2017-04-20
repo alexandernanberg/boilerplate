@@ -1,7 +1,6 @@
 const webpack = require('webpack')
 const HtmlWebpackPLugin = require('html-webpack-plugin')
 const OfflinePlugin = require('offline-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 
@@ -105,9 +104,6 @@ module.exports = {
       mangle: true,
       sourcemap: true,
     }),
-    new CopyWebpackPlugin([
-      { from: 'manifest.json' },
-    ]),
     new OfflinePlugin({
       version: '[hash]',
       AppCache: false,
