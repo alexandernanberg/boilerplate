@@ -42,7 +42,7 @@ module.exports = {
               minimize: true,
               importLoaders: 2,
               modules: true,
-              localIdentName: '[name]__[local]--[hash:base64:5]',
+              localIdentName: debug ? '[name]__[local]--[hash:base64:5]' : null,
             },
           },
           'sass-loader',
