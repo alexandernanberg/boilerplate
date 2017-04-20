@@ -48,6 +48,7 @@
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
     "svg-sprite-loader": "^0.3.0",
+    "uuid": "^3.0.1",
     "webpack": "^2.4.1"
   },
   "devDependencies": {

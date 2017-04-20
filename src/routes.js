@@ -1,4 +1,4 @@
-import { v4 } from 'node-uuid'
+import { v4 } from 'uuid'
 import Index from './pages/Index'
 import About from './pages/About'
 
