@@ -16,7 +16,7 @@
   }
 }
 
-.linkActive {
+.link.linkActive {
   color: map-get($colors , gray900);
   text-decoration: line-through;
 }
