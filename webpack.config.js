@@ -1,7 +1,6 @@
 const webpack = require('webpack')
 const HtmlWebpackPLugin = require('html-webpack-plugin')
 const OfflinePlugin = require('offline-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 
@@ -42,7 +41,7 @@ module.exports = {
               minimize: true,
               importLoaders: 2,
               modules: true,
-              localIdentName: '[name]__[local]--[hash:base64:5]',
+              localIdentName: debug ? '[name]__[local]--[hash:base64:5]' : null,
             },
           },
           'sass-loader',
@@ -66,6 +65,12 @@ module.exports = {
         },
       },
     ],
+  },
+  devServer: {
+    contentBase: `${__dirname}/src`,
+    historyApiFallback: true,
+    hot: true,
+    quiet: true,
   },
   plugins: debug ? [
     new webpack.HotModuleReplacementPlugin(),
@@ -99,9 +104,6 @@ module.exports = {
       mangle: true,
       sourcemap: true,
     }),
-    new CopyWebpackPlugin([
-      { from: 'manifest.json' },
-    ]),
     new OfflinePlugin({
       version: '[hash]',
       AppCache: false,
@@ -110,10 +112,4 @@ module.exports = {
       },
     }),
   ],
-  devServer: {
-    contentBase: `${__dirname}/src`,
-    historyApiFallback: true,
-    hot: true,
-    quiet: true,
-  },
 }
