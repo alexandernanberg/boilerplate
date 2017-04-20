@@ -67,6 +67,12 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    contentBase: `${__dirname}/src`,
+    historyApiFallback: true,
+    hot: true,
+    quiet: true,
+  },
   plugins: debug ? [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
@@ -110,10 +116,4 @@ module.exports = {
       },
     }),
   ],
-  devServer: {
-    contentBase: `${__dirname}/src`,
-    historyApiFallback: true,
-    hot: true,
-    quiet: true,
-  },
 }
