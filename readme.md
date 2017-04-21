@@ -2,9 +2,9 @@
 > Minimal react boilerplate
 
 ## Features
-- [https://github.com/babel/babel](Babel)
-- [https://github.com/ReactTraining/react-router](React router 4)
-- [https://github.com/NekR/offline-plugin](Service-worker (offline-plugin))
+- [Babel](https://github.com/babel/babel)
+- [React router 4](https://github.com/ReactTraining/react-router)
+- [Service-worker](https://github.com/NekR/offline-plugin)
 - Hot module replacement
 - SASS with CSS Modules
 
