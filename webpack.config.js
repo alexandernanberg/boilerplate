@@ -68,10 +68,12 @@ module.exports = {
     ],
   },
   devServer: {
+    host: '0.0.0.0',
     contentBase: path.join(__dirname, 'public'),
     historyApiFallback: true,
     hot: true,
     quiet: true,
+    inline: true,
   },
   plugins: debug ? [
     new webpack.HotModuleReplacementPlugin(),
