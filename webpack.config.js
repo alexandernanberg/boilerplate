@@ -1,3 +1,4 @@
+const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPLugin = require('html-webpack-plugin')
 const OfflinePlugin = require('offline-plugin')
@@ -7,7 +8,7 @@ const autoprefixer = require('autoprefixer')
 const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  context: `${__dirname}/src`,
+  context: path.join(__dirname, 'src'),
   devtool: debug ? 'cheap-module-eval-source-map' : 'source-map',
   entry: {
     app: [
@@ -17,7 +18,7 @@ module.exports = {
     ],
   },
   output: {
-    path: `${__dirname}/public`,
+    path: path.join(__dirname, 'public'),
     filename: debug ? '[name].js' : '[name].[chunkhash].js',
     publicPath: '/',
   },
@@ -41,7 +42,7 @@ module.exports = {
               minimize: true,
               importLoaders: 2,
               modules: true,
-              localIdentName: debug ? '[name]__[local]--[hash:base64:5]' : null,
+              localIdentName: debug ? '[folder]__[local]--[hash:base64:5]' : null,
             },
           },
           'sass-loader',
@@ -67,7 +68,7 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: `${__dirname}/src`,
+    contentBase: path.join(__dirname, 'public'),
     historyApiFallback: true,
     hot: true,
     quiet: true,
