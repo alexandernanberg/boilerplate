@@ -2,12 +2,24 @@
 > Minimal react boilerplate
 
 ## Features
-- [x] Webpack
-- [x] Babel
-- [x] Routing
-- [x] Service-worker
-- [x] App manifest
-- [x] HMR
-- [x] Icons
-- [x] Styles
-- [ ] Static files
+- [https://github.com/babel/babel](Babel)
+- [https://github.com/ReactTraining/react-router](React router 4)
+- [https://github.com/NekR/offline-plugin](Service-worker (offline-plugin))
+- Hot module replacement
+- SASS with CSS Modules
+
+## Getting started
+Install
+```
+$ yarn install
+```
+
+Development
+```
+$ yarn dev
+```
+
+Production
+```
+$ yarn build && yarn start
+```
