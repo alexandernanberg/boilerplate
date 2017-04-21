@@ -2,3 +2,4 @@ public/*.js
 public/*.html
 node_modules
 yarn.lock
+!Icon
