@@ -1,7 +1,7 @@
 import React from 'react'
-import Nav from './Nav'
-import Icon from './Icon'
-import style from '../styles/components/header.scss'
+import Nav from '../Nav'
+import Icon from '../Icon'
+import style from './style.scss'
 
 const Header = () =>
   <header className={style.component}>
