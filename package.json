@@ -47,7 +47,7 @@
     "reset-css": "^2.2.0",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.16.1",
-    "svg-sprite-loader": "^0.3.0",
+    "svg-sprite-loader": "next",
     "uuid": "^3.0.1",
     "webpack": "^2.4.1"
   },
