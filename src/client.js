@@ -20,8 +20,5 @@ if (module.hot) {
 }
 
 if (process.env.NODE_ENV === 'production') {
-  OfflinePluginRuntime.install({
-    onUpdateReady: () => OfflinePluginRuntime.applyUpdate(),
-    onUpdated: () => location.reload(),
-  })
+  OfflinePluginRuntime.install()
 }
