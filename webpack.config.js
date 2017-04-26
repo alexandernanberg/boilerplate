@@ -68,6 +68,14 @@ module.exports = {
       },
     ],
   },
+  stats: {
+    children: false,
+    chunks: false,
+    chunkModules: false,
+    chunkOrigins: false,
+    modules: false,
+    maxModules: 0,
+  },
   devServer: {
     host: '0.0.0.0',
     contentBase: path.join(__dirname, 'public'),
