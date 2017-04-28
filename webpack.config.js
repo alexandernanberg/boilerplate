@@ -45,7 +45,6 @@ module.exports = {
               localIdentName: debug ? '[folder]__[local]--[hash:base64:5]' : null,
             },
           },
-          'sass-loader',
           {
             loader: 'postcss-loader',
             options: {
@@ -54,6 +53,7 @@ module.exports = {
               ],
             },
           },
+          'sass-loader',
         ],
       },
       {
