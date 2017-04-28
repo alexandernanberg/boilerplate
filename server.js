@@ -5,6 +5,7 @@ const compression = require('compression')
 const app = express()
 const port = process.env.PORT || 3000
 
+app.use(compression())
 app.use(express.static(path.resolve(__dirname, 'public'), {
   maxAge: '7d',
   setHeaders: (res, filePath) => {
@@ -14,7 +15,6 @@ app.use(express.static(path.resolve(__dirname, 'public'), {
     }
   },
 }))
-app.use(compression())
 app.use((req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')))
 
 app.listen(port)
