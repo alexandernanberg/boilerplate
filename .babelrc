@@ -1,6 +1,10 @@
 {
   "presets": [
-    ["env", { "modules": false }],
+    ["env", {
+      "modules": false,
+      "loose": true,
+      "useBuiltIns": true
+    }],
     "react"
   ],
   "plugins": [

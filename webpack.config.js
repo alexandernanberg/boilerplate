@@ -13,7 +13,6 @@ module.exports = {
   devtool: debug ? 'cheap-module-eval-source-map' : 'source-map',
   entry: {
     app: [
-      'babel-polyfill',
       'react-hot-loader/patch',
       './client.js',
     ],
