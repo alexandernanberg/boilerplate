@@ -81,7 +81,7 @@ module.exports = {
     historyApiFallback: true,
     hot: true,
     quiet: true,
-    inline: true,
+    disableHostCheck: true,
   },
   plugins: debug ? [
     new webpack.HotModuleReplacementPlugin(),
