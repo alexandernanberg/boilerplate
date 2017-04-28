@@ -92,7 +92,6 @@ module.exports = {
       template: './index.html',
     }),
   ] : [
-    new webpack.EnvironmentPlugin('NODE_ENV'),
     new webpack.NamedModulesPlugin(),
     new SvgSpritePlugin(),
     new HtmlWebpackPLugin({
@@ -105,17 +104,6 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
       minChunks: Infinity,
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-      },
-      mangle: true,
-      sourcemap: true,
     }),
     new OfflinePlugin({
       version: '[hash]',

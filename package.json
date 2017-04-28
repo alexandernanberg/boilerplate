@@ -13,8 +13,8 @@
   "scripts": {
     "test": "eslint ./src",
     "start": "NODE_ENV=production node server.js",
-    "clean": "find public \\( -name '*.js' -o -name '*.html' \\) -mindepth 1 -exec rm -rf {} + || exit 0",
-    "build": "npm run clean && NODE_ENV=production webpack",
+    "clean": "find public \\( -name '*.js' -o -name '*.html' -o -name '*.map' \\) -mindepth 1 -exec rm -rf {} + || exit 0",
+    "build": "npm run clean && NODE_ENV=production webpack -p",
     "dev": "webpack-dev-server"
   },
   "dependencies": {
