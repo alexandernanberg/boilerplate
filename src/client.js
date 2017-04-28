@@ -12,13 +12,16 @@ const render = (Component) => {
     <AppContainer>
       <Component />
     </AppContainer>,
-  document.getElementById('app'))
+    document.getElementById('app'),
+  )
 }
 
 render(App)
 
 if (module.hot) {
-  module.hot.accept('./components/App', () => { render(App) })
+  module.hot.accept('./components/App', () => {
+    render(App)
+  })
 }
 
 if (process.env.NODE_ENV === 'production') {
