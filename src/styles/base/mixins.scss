@@ -1,7 +1,7 @@
 @mixin breakpoint($value) {
   $bp: nth($value, 1);
-  $dir: if(length($value) > 1, nth($value, 2), down);
-  $mediaQuery: if($dir == 'down', max-width, min-width);
+  $dir: if(length($value) > 1, nth($value, 2), up);
+  $mediaQuery: if($dir == 'up', min-width, max-width);
 
   @if type-of($bp) == 'number' and unit($bp) == 'px' {
     @media only screen and (#{$mediaQuery}: $bp) {
@@ -12,7 +12,7 @@
       @content;
     }
   } @else {
-    @warn 'Could not find point in $breakpoints.';
+    @warn 'Could not find #{$value} in $breakpoints.';
   }
 }
 
