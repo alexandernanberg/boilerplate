@@ -114,7 +114,7 @@ module.exports = {
       compress: {
         warnings: false,
       },
-      mangle: true,
+      // mangle: true,
       sourcemap: true,
     }),
     new OfflinePlugin({
