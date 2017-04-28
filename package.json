@@ -8,7 +8,6 @@
     "url": "https://github.com/alexandernanberg/minimal-react-boilerplate"
   },
   "browserslist": [
-    "IE 11",
     "last 2 versions"
   ],
   "scripts": {
