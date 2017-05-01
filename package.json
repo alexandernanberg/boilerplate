@@ -45,8 +45,8 @@
     "react-router-dom": "^4.1.1",
     "reset-css": "^2.2.0",
     "sass-loader": "^6.0.3",
-    "style-loader": "^0.16.1",
-    "svg-sprite-loader": "^2.0.0-alpha.4",
+    "style-loader": "^0.17.0",
+    "svg-sprite-loader": "^2.0.1",
     "uuid": "^3.0.1",
     "webpack": "^2.4.1"
   },
