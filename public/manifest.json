@@ -1,7 +1,8 @@
 {
   "name": "minimal-react-boilerplate",
   "short_name": "minimal-react-boilerplate",
-  "start_url": ".",
+  "description": "",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "black",
@@ -9,11 +10,13 @@
   "icons": [
     {
       "src": "favicon.png",
-      "sizes": "96x96"
+      "sizes": "96x96",
+      "type": "image/png"
     },
     {
       "src": "favicon-512.png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "type": "image/png"
     }
   ]
 }
