@@ -25,7 +25,7 @@
   padding: 0;
   border: 0;
   border-radius: 0;
-  font-family: $font-family;
+  font-family: map-get($font, family);
   line-height: 1em;
   text-decoration: none;
   text-align: center;
@@ -41,7 +41,7 @@
   border-radius: 0;
   background: transparent;
   appearance: none;
-  font-family: $font-family;
+  font-family: map-get($font, family);
   line-height: 1em;
 
   &:focus {
