@@ -9,8 +9,6 @@ const SvgSpritePlugin = require('svg-sprite-loader/plugin')
 const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-  context: path.join(__dirname, 'src'),
-  devtool: debug ? 'cheap-module-eval-source-map' : 'source-map',
   entry: {
     app: [
       'react-hot-loader/patch',
@@ -22,6 +20,8 @@ module.exports = {
     filename: debug ? '[name].js' : '[name].[chunkhash].js',
     publicPath: '/',
   },
+  context: path.join(__dirname, 'src'),
+  devtool: debug ? 'cheap-module-eval-source-map' : 'source-map',
   performance: {
     hints: false,
   },
@@ -93,10 +93,6 @@ module.exports = {
     }),
   ] : [
     new webpack.NamedModulesPlugin(),
-    new SvgSpritePlugin(),
-    new HtmlWebpackPLugin({
-      template: './index.html',
-    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: module => module.context && module.context.indexOf('node_modules') !== -1,
@@ -104,6 +100,14 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
       minChunks: Infinity,
+    }),
+    new SvgSpritePlugin(),
+    new HtmlWebpackPLugin({
+      template: './index.html',
+      minify: {
+        collapseWhitespace: true,
+        preserveLineBreaks: true,
+      },
     }),
     new OfflinePlugin({
       version: '[hash]',
