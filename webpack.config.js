@@ -25,6 +25,23 @@ module.exports = {
   performance: {
     hints: false,
   },
+  stats: {
+    children: false,
+    chunks: false,
+    chunkModules: false,
+    chunkOrigins: false,
+    modules: false,
+    maxModules: 0,
+  },
+  devServer: {
+    host: '0.0.0.0',
+    contentBase: path.join(__dirname, 'public'),
+    historyApiFallback: true,
+    compress: true,
+    hot: true,
+    quiet: true,
+    disableHostCheck: true,
+  },
   module: {
     rules: [
       {
@@ -66,23 +83,6 @@ module.exports = {
         },
       },
     ],
-  },
-  stats: {
-    children: false,
-    chunks: false,
-    chunkModules: false,
-    chunkOrigins: false,
-    modules: false,
-    maxModules: 0,
-  },
-  devServer: {
-    host: '0.0.0.0',
-    contentBase: path.join(__dirname, 'public'),
-    historyApiFallback: true,
-    compress: true,
-    hot: true,
-    quiet: true,
-    disableHostCheck: true,
   },
   plugins: debug ? [
     new webpack.HotModuleReplacementPlugin(),
