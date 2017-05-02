@@ -1,6 +1,6 @@
-public/*.js
-public/*.html
-public/*.map
+public/dist
+public/sw.js
+public/index.html
 node_modules
 yarn.lock
 !Icon

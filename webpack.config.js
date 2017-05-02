@@ -16,9 +16,9 @@ module.exports = {
     ],
   },
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, 'public', 'dist'),
     filename: debug ? '[name].js' : '[name].[chunkhash].js',
-    publicPath: '/',
+    publicPath: '/dist',
   },
   context: path.join(__dirname, 'src'),
   devtool: debug ? 'cheap-module-eval-source-map' : 'source-map',
@@ -90,6 +90,7 @@ module.exports = {
     new SvgSpritePlugin(),
     new HtmlWebpackPLugin({
       template: './index.html',
+      filename: '../index.html',
     }),
   ] : [
     new webpack.NamedModulesPlugin(),
@@ -104,6 +105,7 @@ module.exports = {
     new SvgSpritePlugin(),
     new HtmlWebpackPLugin({
       template: './index.html',
+      filename: '../index.html',
       minify: {
         collapseWhitespace: true,
         preserveLineBreaks: true,
@@ -113,6 +115,8 @@ module.exports = {
       version: '[hash]',
       AppCache: false,
       ServiceWorker: {
+        navigateFallbackURL: '/',
+        output: '../sw.js',
         events: true,
       },
     }),
