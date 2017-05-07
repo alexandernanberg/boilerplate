@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Index = () =>
+const Home = () =>
   <h1 style={{ textAlign: 'center' }}>
     Home.
   </h1>
 
-export default Index
+export default Home
