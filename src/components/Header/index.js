@@ -3,12 +3,13 @@ import Nav from '../Nav'
 import Icon from '../Icon'
 import style from './style.scss'
 
-const Header = () =>
+const Header = () => (
   <header className={style.component}>
     <h2>
       <Icon name="triangle" /> minimal-react-boilerplate
     </h2>
     <Nav />
   </header>
+)
 
 export default Header
