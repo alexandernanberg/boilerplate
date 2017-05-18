@@ -2,19 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="theme-color" content="black">
-  <% htmlWebpackPlugin.files.js.forEach((jsFile) => { %>
-    <link rel="preload" href="<%= jsFile %>" as="script"
-  ><% }) %>
+  <meta name="theme-color" content="#ff5722">
   <link rel="manifest" href="/manifest.json">
-  <link rel="icon" sizes="192x192" href="/icon.png">
-  <link rel="apple-touch-icon" sizes="192x192" href="/icon-192.png">
+  <link rel="icon" href="/icon.png">
+  <link rel="apple-touch-icon" href="/icon-192.png">
+  <% htmlWebpackPlugin.files.js.forEach((jsFile) => { %>
+    <link rel="preload" href="<%= jsFile %>" as="script">
+  <% }) %>
+  <% htmlWebpackPlugin.files.css.forEach((cssFile) => { %>
+    <% var fileName = cssFile.substr(htmlWebpackPlugin.files.publicPath.length) %>
+    <style>
+      <%= compilation.assets[fileName].source().replace(fileName, cssFile) %>
+    </style>
+  <% }) %>
   <title>minimal-react-boilerplate</title>
+  <meta name="description" content="A minimal React boilerplate">
 </head>
 <body>
   <noscript>This web application requires JavaScript to run.</noscript>
   <div id="app"></div>
+  <% htmlWebpackPlugin.files.js.forEach((jsFile) => { %>
+    <script src="<%= jsFile %>"></script>
+  <% }) %>
 </body>
 </html>

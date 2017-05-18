@@ -5,6 +5,7 @@ const OfflinePlugin = require('offline-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const autoprefixer = require('autoprefixer')
 const SvgSpritePlugin = require('svg-sprite-loader/plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const debug = process.env.NODE_ENV !== 'production'
 
@@ -34,13 +35,13 @@ module.exports = {
     maxModules: 0,
   },
   devServer: {
-    host: '0.0.0.0',
-    contentBase: path.join(__dirname, 'public'),
-    historyApiFallback: true,
     compress: true,
+    contentBase: path.join(__dirname, 'public'),
+    disableHostCheck: true,
+    historyApiFallback: true,
+    host: '0.0.0.0',
     hot: true,
     quiet: true,
-    disableHostCheck: true,
   },
   module: {
     rules: [
@@ -54,27 +55,29 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              minimize: true,
-              importLoaders: 2,
-              modules: true,
-              localIdentName: debug ? '[folder]__[local]--[hash:base64:5]' : null,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                minimize: true,
+                importLoaders: 2,
+                modules: true,
+                localIdentName: debug ? '[folder]__[local]--[hash:base64:5]' : '_[hash:base64:6]',
+              },
             },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              plugins: [
-                autoprefixer(),
-              ],
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [
+                  autoprefixer(),
+                ],
+              },
             },
-          },
-          'sass-loader',
-        ],
+            'sass-loader',
+          ],
+        }),
       },
       {
         test: /\.svg$/,
@@ -91,6 +94,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new FriendlyErrorsPlugin(),
+    new ExtractTextPlugin({ disable: true }),
     new SvgSpritePlugin(),
     new HtmlWebpackPLugin({
       template: './index.html',
@@ -105,10 +109,12 @@ module.exports = {
       name: 'manifest',
       minChunks: Infinity,
     }),
+    new ExtractTextPlugin('styles.[contenthash].css'),
     new SvgSpritePlugin(),
     new HtmlWebpackPLugin({
       template: './index.html',
       filename: '../index.html',
+      inject: false,
       minify: {
         collapseWhitespace: true,
         preserveLineBreaks: true,
