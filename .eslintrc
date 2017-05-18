@@ -18,6 +18,7 @@
   ],
   "rules": {
     "semi": ["error", "never"],
+    "react/jsx-closing-bracket-location": 0,
     "react/jsx-filename-extension": 0,
     "react/prop-types": 0
   }

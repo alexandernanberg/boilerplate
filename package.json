@@ -11,7 +11,7 @@
     "last 2 versions"
   ],
   "scripts": {
-    "test": "eslint ./src",
+    "test": "eslint 'src/**/*.js' && stylelint 'src/**/*.scss'",
     "start": "NODE_ENV=production node server.js",
     "clean": "find public \\( -name '*.js' -o -name '*.html' -o -name '*.map' \\) -mindepth 1 -exec rm -rf {} + || exit 0",
     "build": "npm run clean && NODE_ENV=production webpack -p",
@@ -55,6 +55,9 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
+    "postcss": "^6.0.1",
+    "stylelint": "^7.10.1",
+    "stylelint-config-strateg": "^1.2.1",
     "webpack-dev-server": "^2.4.5"
   }
 }

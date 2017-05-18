@@ -7,11 +7,13 @@
     @media only screen and (#{$mediaQuery}: $bp) {
       @content;
     }
-  } @else if map-has-key($breakpoints, $bp) {
+  }
+  @else if map-has-key($breakpoints, $bp) {
     @media only screen and (#{$mediaQuery}: map-get($breakpoints, $bp)) {
       @content;
     }
-  } @else {
+  }
+  @else {
     @warn 'Could not find #{$value} in $breakpoints.';
   }
 }
@@ -21,7 +23,6 @@
   vertical-align: top;
   appearance: none;
   outline: none;
-  background: transparent;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -30,6 +31,7 @@
   text-decoration: none;
   text-align: center;
   cursor: pointer;
+  background: transparent;
 
   &:focus {
     outline: none;
@@ -39,10 +41,10 @@
 @mixin input {
   border: 0;
   border-radius: 0;
-  background: transparent;
   appearance: none;
   font-family: map-get($font, family);
   line-height: 1em;
+  background: transparent;
 
   &:focus {
     outline: none;
