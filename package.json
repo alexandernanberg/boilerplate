@@ -18,7 +18,7 @@
     "dev": "webpack-dev-server"
   },
   "dependencies": {
-    "autoprefixer": "^7.1.0",
+    "autoprefixer": "^7.1.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -29,12 +29,12 @@
     "classnames": "^2.2.5",
     "compression": "^1.6.2",
     "css-loader": "^0.28.1",
-    "express": "^4.15.2",
+    "express": "^4.15.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.28.0",
     "node-sass": "^4.5.3",
-    "offline-plugin": "^4.7.0",
+    "offline-plugin": "^4.8.0",
     "postcss-loader": "^2.0.5",
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
