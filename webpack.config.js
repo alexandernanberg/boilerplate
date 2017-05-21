@@ -98,6 +98,7 @@ module.exports = {
     new SvgSpritePlugin(),
     new HtmlWebpackPLugin({
       template: './index.html',
+      inject: false,
     }),
   ] : [
     new webpack.NamedModulesPlugin(),
