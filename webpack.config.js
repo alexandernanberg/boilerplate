@@ -22,7 +22,7 @@ module.exports = {
     publicPath: debug ? '/' : '/dist/',
   },
   context: path.join(__dirname, 'src'),
-  devtool: debug ? 'cheap-module-eval-source-map' : 'source-map',
+  devtool: debug ? 'cheap-module-inline-source-map' : 'source-map',
   performance: {
     hints: false,
   },
