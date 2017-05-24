@@ -9,13 +9,17 @@ app.use(compression())
 app.use(express.static(path.resolve(__dirname, 'public'), {
   maxAge: '7d',
   setHeaders: (res, filePath) => {
-    const fileName = filePath.split('/').pop()
-    if (fileName.match(/^(sw.js|index.html)$/)) {
+    if (filePath.match(/(sw.js|index.html)$/)) {
       res.setHeader('Cache-Control', 'public, max-age=0')
     }
   },
 }))
-app.use((req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')))
+
+app.use((req, res) => res.sendFile(path.join(
+  __dirname,
+  'public',
+  'index.html',
+)))
 
 app.listen(port)
 
