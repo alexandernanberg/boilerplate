@@ -61,7 +61,7 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                minimize: true,
+                minimize: !debug,
                 importLoaders: 2,
                 modules: true,
                 localIdentName: debug ? '[folder]__[local]' : '[hash:base64:6]',
