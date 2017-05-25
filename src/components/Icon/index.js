@@ -7,7 +7,7 @@ const symbols = new Map()
 const files = require.context('./glyphs', false, /.svg$/)
 files.keys().forEach((item) => {
   const { id } = files(item).default
-  symbols.set(id.replace(/-{2}(.*)/, ''), id)
+  symbols.set(id.replace(/_{2}(.*)/, ''), id)
 })
 
 const Icon = ({ name, ...props }) => (
