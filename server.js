@@ -15,11 +15,7 @@ app.use(express.static(path.resolve(__dirname, 'public'), {
   },
 }))
 
-app.use((req, res) => res.sendFile(path.join(
-  __dirname,
-  'public',
-  'index.html',
-)))
+app.use((req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')))
 
 app.listen(port)
 
