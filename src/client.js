@@ -4,8 +4,8 @@ import React from 'react'
 import ReactDom from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import OfflinePluginRuntime from 'offline-plugin/runtime'
-import App from './components/App'
 import './styles/global.scss'
+import App from './components/App'
 
 const render = (Component) => {
   ReactDom.render(
