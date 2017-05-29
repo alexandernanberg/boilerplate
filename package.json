@@ -29,7 +29,7 @@
     "babel-preset-react": "^6.24.1",
     "classnames": "^2.2.5",
     "compression": "^1.6.2",
-    "css-loader": "^0.28.2",
+    "css-loader": "^0.28.3",
     "express": "^4.15.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "friendly-errors-webpack-plugin": "^1.6.1",
@@ -45,9 +45,9 @@
     "reset-css": "^2.2.0",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.1",
-    "svg-sprite-loader": "^3.0.2",
+    "svg-sprite-loader": "^3.0.3",
     "uuid": "^3.0.1",
-    "webpack": "^2.6.0"
+    "webpack": "^2.6.1"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
