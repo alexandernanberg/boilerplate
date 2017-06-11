@@ -26,6 +26,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-hot-loader": "next",
     "react-router-dom": "^4.1.1",
     "reset-css": "^2.2.0",
     "uuid": "^3.0.1"
@@ -52,7 +53,6 @@
     "node-sass": "^4.5.3",
     "postcss": "^6.0.1",
     "postcss-loader": "^2.0.5",
-    "react-hot-loader": "next",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.2",
     "stylelint": "^7.11.0",
