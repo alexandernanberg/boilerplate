@@ -11,11 +11,18 @@
     "last 2 versions"
   ],
   "scripts": {
-    "test": "eslint 'src/**/*.js' && stylelint 'src/**/*.scss'",
-    "start": "NODE_ENV=production node server.js",
-    "clean": "find public \\( -name '*.js' -o -name '*.html' -o -name '*.map' -o -name '*.css' \\) -mindepth 1 -exec rm -rf {} + || exit 0",
+    "dev": "webpack-dev-server",
     "build": "npm run clean && NODE_ENV=production webpack -p",
-    "dev": "webpack-dev-server"
+    "start": "NODE_ENV=production node server.js",
+    "test": "eslint 'src/**/*.js' && stylelint 'src/**/*.scss'",
+    "clean": "find public \\( -name '*.js' -o -name '*.html' -o -name '*.map' -o -name '*.css' \\) -mindepth 1 -exec rm -rf {} + || exit 0",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
@@ -50,6 +57,8 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "friendly-errors-webpack-plugin": "^1.6.1",
     "html-webpack-plugin": "^2.28.0",
+    "husky": "^0.13.4",
+    "lint-staged": "^3.6.1",
     "node-sass": "^4.5.3",
     "postcss": "^6.0.2",
     "postcss-loader": "^2.0.5",
