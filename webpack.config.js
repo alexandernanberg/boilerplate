@@ -75,7 +75,12 @@ module.exports = {
                 ],
               },
             },
-            'sass-loader',
+            {
+              loader: 'sass-loader',
+              options: {
+                data: `@import "${path.join(__dirname, 'src/styles/core')}";`,
+              },
+            },
           ],
         }),
       },
