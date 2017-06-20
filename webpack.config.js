@@ -115,6 +115,7 @@ module.exports = {
       name: 'manifest',
       minChunks: Infinity,
     }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
     new ExtractTextPlugin('styles.[contenthash].css'),
     new SvgSpritePlugin(),
     new HtmlWebpackPLugin({
