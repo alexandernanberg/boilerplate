@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#ff5722">
   <link rel="manifest" href="/manifest.json">
@@ -12,10 +12,7 @@
     <link rel="preload" href="<%= jsFile %>" as="script">
   <% }) %>
   <% htmlWebpackPlugin.files.css.forEach((cssFile) => { %>
-    <% var fileName = cssFile.substr(htmlWebpackPlugin.files.publicPath.length) %>
-    <style>
-      <%= compilation.assets[fileName].source().replace(fileName, cssFile) %>
-    </style>
+    <link rel="stylesheet" href="<%= cssFile %>">
   <% }) %>
   <title>minimal-react-boilerplate</title>
   <meta name="description" content="A minimal React boilerplate">

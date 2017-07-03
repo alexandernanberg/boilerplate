@@ -10,12 +10,12 @@ files.keys().forEach((item) => {
   symbols.set(id.replace(/_{2}(.*)/, ''), id)
 })
 
-const Icon = ({ name, ...props }) => (
+const Icon = ({ name, className, ...props }) => (
   <svg
     {...props}
     className={classNames(
-      style.component,
-      props.className,
+      style.root,
+      className,
     )}>
     <use xlinkHref={`#${symbols.get(name)}`} />
   </svg>
