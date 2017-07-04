@@ -11,6 +11,7 @@ const autoprefixer = require('autoprefixer')
 const isDev = process.env.NODE_ENV !== 'production'
 
 let plugins = [
+  new webpack.EnvironmentPlugin(['NODE_ENV']),
   new webpack.NamedModulesPlugin(),
   new FriendlyErrorsPlugin(),
   new webpack.optimize.CommonsChunkPlugin({
