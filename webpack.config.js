@@ -11,9 +11,8 @@ const autoprefixer = require('autoprefixer')
 const isDev = process.env.NODE_ENV !== 'production'
 
 let plugins = [
-  new webpack.EnvironmentPlugin(['NODE_ENV']),
+  new webpack.EnvironmentPlugin({ NODE_ENV: 'development' }),
   new webpack.NamedModulesPlugin(),
-  new FriendlyErrorsPlugin(),
   new webpack.optimize.CommonsChunkPlugin({
     name: 'commons',
     minChunks: module => module.context && module.context.indexOf('node_modules') !== -1,
@@ -22,6 +21,7 @@ let plugins = [
     name: 'manifest',
     minChunks: Infinity,
   }),
+  new FriendlyErrorsPlugin(),
   new SvgSpritePlugin(),
 ]
 
