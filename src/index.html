@@ -11,9 +11,6 @@
   <% htmlWebpackPlugin.files.js.forEach((jsFile) => { %>
     <link rel="preload" href="<%= jsFile %>" as="script">
   <% }) %>
-  <% htmlWebpackPlugin.files.css.forEach((cssFile) => { %>
-    <link rel="stylesheet" href="<%= cssFile %>">
-  <% }) %>
   <title>minimal-react-boilerplate</title>
   <meta name="description" content="A minimal React boilerplate">
 </head>
