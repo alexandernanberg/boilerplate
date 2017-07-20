@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import style from './style.scss'
 
-const symbols = new Map()
-const files = require.context('./glyphs', false, /.svg$/)
-files.keys().forEach((item) => {
-  const { id } = files(item).default
-  symbols.set(id.replace(/_{2}(.*)/, ''), id)
-})
+const withMap = r => r.keys().reduce((acc, item) => {
+  const { id } = r(item).default
+  acc[id.match(/^[^-]*/)[0]] = id
+  return acc
+}, {})
+
+const map = withMap(require.context('./glyphs', false, /.svg$/))
 
 const Icon = ({ name, className, ...props }) => (
   <svg
@@ -17,7 +18,7 @@ const Icon = ({ name, className, ...props }) => (
       style.root,
       className,
     )}>
-    <use xlinkHref={`#${symbols.get(name)}`} />
+    <use xlinkHref={`#${map[name]}`} />
   </svg>
 )
 
