@@ -21,7 +21,11 @@ let plugins = [
     name: 'manifest',
     minChunks: Infinity,
   }),
-  new FriendlyErrorsPlugin(),
+  new FriendlyErrorsPlugin({
+    compilationSuccessInfo: {
+      messages: ['Ready on http://localhost:8080'],
+    },
+  }),
   new SvgSpritePlugin(),
 ]
 
