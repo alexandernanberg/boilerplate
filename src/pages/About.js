@@ -1,9 +1,10 @@
 import React from 'react'
+import Title from '../components/common/Title'
 
 const About = () => (
-  <h1 style={{ textAlign: 'center' }}>
+  <Title.H1>
     About.
-  </h1>
+  </Title.H1>
 )
 
 export default About

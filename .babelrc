@@ -8,10 +8,12 @@
     "react"
   ],
   "plugins": [
+    "react-hot-loader/babel",
     "transform-class-properties",
     "transform-object-rest-spread",
     "transform-runtime",
-    "react-hot-loader/babel"
+    "styled-components",
+    "polished"
   ],
   "env": {
     "production": {

@@ -4,21 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="theme-color" content="#ff5722">
+  <meta name="theme-color" content="#000000">
   <link rel="manifest" href="/manifest.json">
-  <link rel="icon" href="/media/icon.png">
-  <link rel="apple-touch-icon" href="/media/icon-192.png">
-  <% htmlWebpackPlugin.files.js.forEach((jsFile) => { %>
-    <link rel="preload" href="<%= jsFile %>" as="script">
-  <% }) %>
-  <title>minimal-react-boilerplate</title>
-  <meta name="description" content="A minimal React boilerplate">
+  <link rel="icon" href="/assets/icon.png">
+  <link rel="apple-touch-icon" href="/assets/icon-192.png">
+  <title>Minimal react boilerplate</title>
+  <meta name="description" content="">
 </head>
 <body>
-  <noscript>This web application requires JavaScript to run.</noscript>
+  <noscript>Den här webbplatsen kräver JavaScript.</noscript>
   <div id="app"></div>
-  <% htmlWebpackPlugin.files.js.forEach((jsFile) => { %>
-    <script src="<%= jsFile %>"></script>
-  <% }) %>
 </body>
 </html>

@@ -9,13 +9,6 @@
   },
   "rules": {
     "semi": ["error", "never"],
-    "react/jsx-closing-bracket-location": [
-      "error",
-      {
-        "nonEmpty": "after-props",
-        "selfClosing": "tag-aligned"
-      }
-    ],
     "react/jsx-filename-extension": 0,
     "react/prop-types": 0
   }

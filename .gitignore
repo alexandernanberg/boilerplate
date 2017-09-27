@@ -1,6 +1,4 @@
-public/dist
-public/sw.js
-public/index.html
+public
 node_modules
 yarn.lock
 !Icon
