@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { NavLink as Link } from 'react-router-dom'
-import { colors } from '../constants'
+import { colors } from '../utils/style'
 
 const Nav = styled.nav`
   display: flex;

@@ -2,7 +2,6 @@ const path = require('path')
 const webpack = require('webpack')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const HtmlWebpackPLugin = require('html-webpack-plugin')
-const SvgSpritePlugin = require('svg-sprite-loader/plugin')
 const OfflinePlugin = require('offline-plugin')
 // const errorOverlayMiddleware = require('react-dev-utils/errorOverlayMiddleware')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
@@ -33,7 +32,6 @@ let plugins = [
       preserveLineBreaks: true,
     },
   }),
-  new SvgSpritePlugin(),
 ]
 
 if (isDev) {
@@ -108,15 +106,6 @@ module.exports = {
             },
           },
         ],
-      },
-      {
-        test: /\.svg$/,
-        loader: {
-          loader: 'svg-sprite-loader',
-          options: {
-            symbolId: '[name]',
-          },
-        },
       },
     ],
   },

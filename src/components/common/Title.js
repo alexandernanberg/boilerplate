@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../constants'
+import { colors } from '../../utils/style'
 
 const Title = styled.h1`
   color: ${colors.gray900};
