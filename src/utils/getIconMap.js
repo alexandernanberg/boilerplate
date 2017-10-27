@@ -7,7 +7,7 @@ const icons = fs.readdirSync(iconPath)
 
 module.exports = icons
   .reduce((acc, file) => {
-    const content = fs.readFileSync(path.join(iconPath, file), 'utf-8')
+    const content = fs.readFileSync(path.join(iconPath, file), 'utf8')
 
     acc[file.slice(0, -4)] = {
       path: /d="(.*?)"/.exec(content)[1],
