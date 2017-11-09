@@ -1,11 +1,11 @@
-# minimal-react-boilerplate
+# react-boilerplate
 > Minimal react boilerplate
 
 ## Features
 - [React router 4](https://github.com/ReactTraining/react-router)
 - [Service-worker (offline-plugin)](https://github.com/NekR/offline-plugin)
-- Hot module replacement
-- Styled components
+- [Styled Components](https://github.com/styled-components/styled-components)
+- [React Hot Loader](https://github.com/gaearon/react-hot-loader)
 
 ## Getting started
 Install
