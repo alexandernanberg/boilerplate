@@ -9,17 +9,17 @@
 
 ## Getting started
 Install
-```
+```bash
 $ yarn install
 ```
 
 Development
-```
+```bash
 $ yarn dev
 ```
 
 Production
-```
+```bash
 $ yarn build && yarn start
 ```
 
