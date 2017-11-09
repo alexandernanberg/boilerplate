@@ -1,18 +1,12 @@
 {
-  "name": "minimal-react-boilerplate",
+  "name": "react-boilerplate",
   "version": "1.0.0",
   "description": "",
   "author": "Alexander Nanberg <alex.nanberg@hotmail.com> (alexandernanberg.com)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexandernanberg/minimal-react-boilerplate"
+    "url": "https://github.com/alexandernanberg/react-boilerplate"
   },
-  "browserslist": [
-    "last 2 Edge versions",
-    "last 2 Safari versions",
-    "last 2 Chrome versions",
-    "last 2 Firefox versions"
-  ],
   "scripts": {
     "dev": "webpack-dev-server",
     "build": "npm run clean && NODE_ENV=production webpack",
