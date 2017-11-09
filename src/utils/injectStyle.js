@@ -12,8 +12,8 @@ export default () => injectGlobal`
   }
 
   html {
-    font-size: 10px;
     box-sizing: border-box;
+    font-size: 10px;
   }
 
   body {
