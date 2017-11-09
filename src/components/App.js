@@ -1,17 +1,19 @@
 import React from 'react'
-import { v4 } from 'uuid'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import injectStyle from '../utils/injectStyle'
+import injectGlobalStyle from '../utils/injectGlobalStyle'
 import Header from './Header'
 import routes from '../routes'
 
 const App = () => {
-  injectStyle()
+  injectGlobalStyle()
+
   return (
     <Router>
       <div>
         <Header />
-        { routes.map(props => <Route key={v4()} {...props} />) }
+        { routes.map(route => (
+          <Route key={route.id} {...route} />
+        ))}
       </div>
     </Router>
   )

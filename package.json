@@ -11,8 +11,8 @@
     "dev": "webpack-dev-server",
     "build": "npm run clean && NODE_ENV=production webpack",
     "start": "NODE_ENV=production node server.js",
-    "test": "eslint 'src/**/*.js' && stylelint 'src/**/*.js'",
-    "clean": "find public -mindepth 1 -exec rm -rf {} + || exit 0",
+    "lint": "eslint 'src/**/*.js' && stylelint 'src/**/*.js'",
+    "clean": "find public ! -name 'manifest.json' -mindepth 1 -exec rm -rf {} + || exit 0",
     "precommit": "lint-staged"
   },
   "lint-staged": {
@@ -65,7 +65,7 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.0.0",
     "webpack": "^3.8.1",
-    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-bundle-analyzer": "^2.9.1",
     "webpack-dev-server": "^2.9.4"
   }
 }

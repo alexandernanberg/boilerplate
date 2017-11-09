@@ -1,10 +1,10 @@
 import React from 'react'
-import Title from '../components/common/Title'
+import { H1 } from '../components/common/Title'
 
 const Home = () => (
-  <Title.H1>
+  <H1>
     Home.
-  </Title.H1>
+  </H1>
 )
 
 export default Home

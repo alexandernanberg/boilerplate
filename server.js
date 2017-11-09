@@ -19,7 +19,7 @@ server.use(express.static(resolve(__dirname, 'public'), {
   },
 }))
 
-// Index route
+// Routes
 server.use((req, res) => res.sendFile(join(__dirname, 'public', 'index.html')))
 
 // Listen

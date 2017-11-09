@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import iconMap from '../../utils/getIconMap'
+import iconMap from '../../utils/iconMap'
 
 const Svg = styled.svg`
   display: inline-block;
