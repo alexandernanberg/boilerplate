@@ -1,10 +1,10 @@
 const path = require('path')
 const webpack = require('webpack')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const HtmlWebpackPLugin = require('html-webpack-plugin')
 const OfflinePlugin = require('offline-plugin')
-// const errorOverlayMiddleware = require('react-dev-utils/errorOverlayMiddleware')
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
 const isDev = process.env.NODE_ENV !== 'production'
 
@@ -39,6 +39,7 @@ if (isDev) {
     ...plugins,
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    new CaseSensitivePathsPlugin(),
   ]
 } else {
   plugins = [
@@ -55,24 +56,28 @@ if (isDev) {
         navigateFallbackURL: '/',
       },
     }),
-    // new BundleAnalyzerPlugin(),
+    new BundleAnalyzerPlugin(),
   ]
 }
 
 module.exports = {
   entry: {
     app: [
-      'react-hot-loader/patch',
+      ...(isDev ? [
+        require.resolve('react-hot-loader/patch'),
+        require.resolve('react-dev-utils/webpackHotDevClient'),
+      ] : []),
       './client.js',
     ],
   },
   output: {
     path: path.join(__dirname, 'public'),
     filename: isDev ? '[name].js' : '[name].[chunkhash].js',
+    chunkFilename: isDev ? '[name].js' : '[name].[chunkhash].js',
     publicPath: '/',
   },
   context: path.join(__dirname, 'src'),
-  devtool: isDev ? 'cheap-module-inline-source-map' : 'source-map',
+  devtool: isDev ? 'cheap-module-inline-source-map' : '',
   performance: {
     hints: false,
   },
