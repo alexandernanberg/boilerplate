@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 const HtmlWebpackPLugin = require('html-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OfflinePlugin = require('offline-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 
@@ -12,7 +13,7 @@ let plugins = [
   new webpack.EnvironmentPlugin({ NODE_ENV: 'development' }),
   new webpack.NamedModulesPlugin(),
   new webpack.optimize.CommonsChunkPlugin({
-    name: 'commons',
+    name: 'common',
     minChunks: module => module.context && module.context.indexOf('node_modules') !== -1,
   }),
   new webpack.optimize.CommonsChunkPlugin({
@@ -45,10 +46,7 @@ if (isDev) {
   plugins = [
     ...plugins,
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false },
-      sourceMap: true,
-    }),
+    new UglifyJsPlugin(),
     new OfflinePlugin({
       version: '[hash]',
       AppCache: false,
@@ -71,19 +69,19 @@ module.exports = {
     ],
   },
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.resolve('public'),
     filename: isDev ? '[name].js' : '[name].[chunkhash].js',
     chunkFilename: isDev ? '[name].js' : '[name].[chunkhash].js',
     publicPath: '/',
   },
-  context: path.join(__dirname, 'src'),
-  devtool: isDev ? 'cheap-module-inline-source-map' : '',
+  context: path.resolve('src'),
+  devtool: isDev ? 'cheap-module-inline-source-map' : 'sourcemap',
   performance: {
     hints: false,
   },
   devServer: {
     compress: true,
-    contentBase: path.join(__dirname, 'public'),
+    contentBase: path.resolve('public'),
     disableHostCheck: true,
     historyApiFallback: true,
     host: '0.0.0.0',
@@ -100,17 +98,6 @@ module.exports = {
         options: {
           cacheDirectory: true,
         },
-      },
-      {
-        test: /\.(png|jpg|gif|json)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-            },
-          },
-        ],
       },
     ],
   },

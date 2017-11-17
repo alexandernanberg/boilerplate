@@ -3,10 +3,6 @@ import ReactDom from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import App from './components/App'
 
-import './assets/icon.png'
-import './assets/icon-192.png'
-import './assets/icon-512.png'
-
 const render = (Component) => {
   ReactDom.render(
     <AppContainer>

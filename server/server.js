@@ -1,4 +1,4 @@
-const { join, resolve } = require('path')
+const { resolve } = require('path')
 const express = require('express')
 const compression = require('compression')
 
@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000
 server.use(compression())
 
 // Cache
-server.use(express.static(resolve(__dirname, 'public'), {
+server.use(express.static(resolve('public'), {
   maxAge: '7d',
   setHeaders: (res, filePath) => {
     if (filePath.match(/(sw.js|index.html)$/)) {
@@ -20,7 +20,7 @@ server.use(express.static(resolve(__dirname, 'public'), {
 }))
 
 // Routes
-server.use((req, res) => res.sendFile(join(__dirname, 'public', 'index.html')))
+server.use((req, res) => res.sendFile(resolve('public', 'index.html')))
 
 // Listen
 server.listen(port, () => {
