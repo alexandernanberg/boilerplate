@@ -8,9 +8,9 @@
     "url": "https://github.com/alexandernanberg/react-boilerplate"
   },
   "scripts": {
-    "dev": "webpack-dev-server --config config/webpack.config.js",
+    "dev": "node scripts/dev.js",
     "build": "npm run clean && NODE_ENV=production webpack --config config/webpack.config.js",
-    "start": "NODE_ENV=production node server/server.js",
+    "start": "NODE_ENV=production node server.js",
     "lint": "eslint 'src/**/*.js' && stylelint 'src/**/*.js'",
     "clean": "find public ! -name 'manifest.json' -mindepth 1 -exec rm -rf {} + || exit 0",
     "precommit": "lint-staged"
@@ -46,6 +46,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
+    "copy-webpack-plugin": "^4.2.1",
     "eslint": "^4.11.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",

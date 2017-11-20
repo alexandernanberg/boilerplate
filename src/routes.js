@@ -1,5 +1,5 @@
 import { v4 } from 'uuid'
-import Home from './pages/Home'
+import Index from './pages/Index'
 import About from './pages/About'
 
 const routes = [
@@ -7,7 +7,7 @@ const routes = [
     id: v4(),
     path: '/',
     exact: true,
-    component: Home,
+    component: Index,
   },
   {
     id: v4(),

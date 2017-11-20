@@ -24,5 +24,11 @@ $ yarn build && yarn start
 ```
 
 ## Credits
-- [Next.js](https://github.com/zeit/next.js/)
 - [Create React App](https://github.com/facebookincubator/create-react-app)
+- [Next.js](https://github.com/zeit/next.js/)
+
+## Author
+[Alexander Nanberg](https://alexandernanberg.com)
+
+## License 
+[MIT](license)
