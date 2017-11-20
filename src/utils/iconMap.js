@@ -2,7 +2,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const iconPath = path.resolve('src/assets/icons')
+const iconPath = path.resolve('public/static/icons')
 const icons = fs.readdirSync(iconPath)
 
 module.exports = icons
