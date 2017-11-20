@@ -1,6 +1,8 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPLugin = require('html-webpack-plugin')
+const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OfflinePlugin = require('offline-plugin')
 
@@ -12,9 +14,10 @@ module.exports = {
     app: [paths.appIndexJs],
   },
   output: {
+    path: paths.appBuild,
     filename: 'static/scripts/[name].[chunkhash:8].js',
     chunkFilename: 'static/scripts/[name].[chunkhash:8].chunk.js',
-    publicPath: '/',
+    publicPath: paths.servedPath,
   },
   module: {
     rules: [
@@ -29,7 +32,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.EnvironmentPlugin({ NODE_ENV: 'development' }),
+    new webpack.EnvironmentPlugin({ NODE_ENV: 'production' }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new UglifyJsPlugin(),
     new OfflinePlugin({
@@ -47,8 +50,16 @@ module.exports = {
       name: 'manifest',
       minChunks: Infinity,
     }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve('public'),
+        to: '.',
+        ignore: ['index.html'],
+      },
+    ]),
+    new InterpolateHtmlPlugin({ PUBLIC_URL: '' }),
     new HtmlWebpackPLugin({
-      template: './index.html',
+      template: paths.appHtml,
       inject: true,
       minify: {
         collapseWhitespace: true,

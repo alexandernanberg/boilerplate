@@ -4,8 +4,7 @@
 node_modules
 
 # Build
-public/*
-public/!manifest.json
+dist
 
 # Misc
 .vscode

@@ -3,12 +3,12 @@ const express = require('express')
 const compression = require('compression')
 
 const server = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8080
 
 server.use(compression())
 
 server.use(express.static(
-  resolve('public'),
+  resolve('dist'),
   {
     maxAge: '7d',
     setHeaders: (res, filePath) => {
@@ -19,7 +19,7 @@ server.use(express.static(
   },
 ))
 
-server.use((req, res) => res.sendFile(resolve('public', 'index.html')))
+server.use((req, res) => res.sendFile(resolve('dist', 'index.html')))
 
 server.listen(port, () => {
   console.log(`> Ready on http://localhost:${port}`)

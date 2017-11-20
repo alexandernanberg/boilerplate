@@ -8,11 +8,11 @@
     "url": "https://github.com/alexandernanberg/react-boilerplate"
   },
   "scripts": {
-    "dev": "node scripts/dev.js",
-    "build": "npm run clean && NODE_ENV=production webpack --config config/webpack.config.js",
+    "dev": "webpack-dev-server --config config/webpack.config.dev.js",
+    "build": "npm run clean && NODE_ENV=production webpack --config config/webpack.config.prod.js",
     "start": "NODE_ENV=production node server.js",
     "lint": "eslint 'src/**/*.js' && stylelint 'src/**/*.js'",
-    "clean": "find public ! -name 'manifest.json' -mindepth 1 -exec rm -rf {} + || exit 0",
+    "clean": "find dist -mindepth 1 -exec rm -rf {} + || exit 0",
     "precommit": "lint-staged"
   },
   "dependencies": {
