@@ -1,7 +1,7 @@
 {
   "name": "react-boilerplate",
   "short_name": "boilerplate",
-  "start_url": "./index.html",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "theme_color": "#000000",
