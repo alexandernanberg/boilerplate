@@ -34,14 +34,6 @@ module.exports = {
   plugins: [
     new webpack.EnvironmentPlugin({ NODE_ENV: 'production' }),
     new webpack.optimize.ModuleConcatenationPlugin(),
-    new UglifyJsPlugin(),
-    new OfflinePlugin({
-      version: '[hash]',
-      AppCache: false,
-      ServiceWorker: {
-        navigateFallbackURL: '/',
-      },
-    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common',
       minChunks: module => module.context && module.context.indexOf('node_modules') !== -1,
@@ -64,6 +56,14 @@ module.exports = {
       minify: {
         collapseWhitespace: true,
         preserveLineBreaks: true,
+      },
+    }),
+    new UglifyJsPlugin(),
+    new OfflinePlugin({
+      version: '[hash]',
+      AppCache: false,
+      ServiceWorker: {
+        navigateFallbackURL: '/',
       },
     }),
   ],
