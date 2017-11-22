@@ -1,12 +1,11 @@
 {
   "name": "react-boilerplate",
   "short_name": "boilerplate",
-  "description": "",
-  "start_url": "/",
+  "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait",
-  "theme_color": "black",
-  "background_color": "white",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
   "icons": [
     {
       "src": "static/images/icon-192.png",
