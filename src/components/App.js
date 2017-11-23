@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
-import injectGlobalStyle from '../utils/injectGlobalStyle'
+import { injectGlobalStyle } from '../style'
 import Header from './Header'
 import routes from '../routes'
 

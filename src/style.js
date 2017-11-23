@@ -1,4 +1,4 @@
-import { css } from 'styled-components'
+import { css, injectGlobal } from 'styled-components'
 
 export const colors = {
   gray900: '#101010',
@@ -34,3 +34,38 @@ export const media = Object.keys(breakpoints)
     `
     return acc
   }, {})
+
+export const injectGlobalStyle = () => injectGlobal`
+  ${preval`
+    const fs = require('fs')
+    module.exports = fs.readFileSync('node_modules/reset-css/reset.css', 'utf8')
+  `}
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  html {
+    box-sizing: border-box;
+    font-size: 10px;
+  }
+
+  body {
+    font-family: ${fontFamily};
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    height: auto;
+    max-width: 100%;
+  }
+
+  ::selection {
+    color: white;
+    background-color: black;
+  }
+`
