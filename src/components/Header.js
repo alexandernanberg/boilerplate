@@ -5,11 +5,11 @@ import Nav from './Nav'
 
 const Header = styled.header`
   display: flex;
-  flex-flow: row nowrap;
-  align-items: center;
   justify-content: space-between;
-  margin: 0 auto 64px;
-  padding: 32px;
+  align-items: center;
+  align-self: center;
+  padding: 32px 16px;
+  width: 100%;
   max-width: 920px;
 `
 

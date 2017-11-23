@@ -7,6 +7,8 @@ import Header from './Header'
 import routes from '../routes'
 
 const App = styled.div`
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
 `
 
