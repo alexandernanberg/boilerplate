@@ -2,7 +2,7 @@ import { v4 } from 'uuid'
 import Index from './pages/Index'
 import About from './pages/About'
 
-const routes = [
+export default [
   {
     id: v4(),
     path: '/',
@@ -15,5 +15,3 @@ const routes = [
     component: About,
   },
 ]
-
-export default routes

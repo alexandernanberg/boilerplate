@@ -1,22 +1,32 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Helmet from 'react-helmet'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import styled from 'styled-components'
 import injectGlobalStyle from '../utils/injectGlobalStyle'
 import Header from './Header'
 import routes from '../routes'
 
-const App = () => {
+const App = styled.div`
+  min-height: 100vh;
+`
+
+export default () => {
   injectGlobalStyle()
 
   return (
     <Router>
-      <div>
+      <App>
+        <Helmet
+          titleTemplate="%s - React Boilerplate"
+          defaultTitle="React Boilerplate"
+        />
         <Header />
-        { routes.map(route => (
-          <Route key={route.id} {...route} />
-        ))}
-      </div>
+        <Switch>
+          { routes.map(({ id, ...props }) => (
+            <Route key={id} {...props} />
+          ))}
+        </Switch>
+      </App>
     </Router>
   )
 }
-
-export default App
