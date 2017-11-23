@@ -3,9 +3,11 @@
 
 ## Built-in features
 - [React Router](https://github.com/ReactTraining/react-router)
-- [Service-worker (offline-plugin)](https://github.com/NekR/offline-plugin)
-- [Styled Components](https://github.com/styled-components/styled-components)
 - [React Hot Loader](https://github.com/gaearon/react-hot-loader)
+- [Styled Components](https://github.com/styled-components/styled-components)
+- Manage document head with [React Helmet](https://github.com/nfl/react-helmet)
+- Code splitting with [React Loadable](https://github.com/thejameskyle/react-loadable)
+- Service-worker with [offline-plugin](https://github.com/NekR/offline-plugin)
 
 ## Getting started
 Install
