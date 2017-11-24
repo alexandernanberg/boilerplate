@@ -13,6 +13,7 @@
     "transform-class-properties",
     "transform-object-rest-spread",
     "transform-runtime",
+    "syntax-dynamic-import",
     "styled-components",
     "polished"
   ],
