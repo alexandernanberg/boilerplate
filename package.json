@@ -9,10 +9,9 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --config config/webpack.config.dev.js",
-    "build": "npm run clean && NODE_ENV=production webpack --config config/webpack.config.prod.js",
+    "build": "NODE_ENV=production webpack --config config/webpack.config.prod.js",
     "start": "serve -s dist",
     "lint": "eslint 'src/**/*.js' && stylelint 'src/**/*.js'",
-    "clean": "find dist -mindepth 1 -exec rm -rf {} + || exit 0",
     "precommit": "lint-staged"
   },
   "dependencies": {
@@ -45,6 +44,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
+    "clean-webpack-plugin": "^0.1.17",
     "copy-webpack-plugin": "^4.2.1",
     "eslint": "^4.11.0",
     "eslint-config-airbnb": "^16.1.0",

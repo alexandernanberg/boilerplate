@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPLugin = require('html-webpack-plugin')
+const CleanWebpackPLugin = require('clean-webpack-plugin')
 const InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
@@ -42,6 +43,7 @@ module.exports = {
       name: 'manifest',
       minChunks: Infinity,
     }),
+    new CleanWebpackPLugin([paths.appBuild], { root: process.cwd() }),
     new CopyWebpackPlugin([
       {
         from: path.resolve('public'),
