@@ -9,7 +9,7 @@ const noopServiceWorkerMiddleware = require('react-dev-utils/noopServiceWorkerMi
 const paths = require('./paths')
 
 const publicPath = '/'
-const port = 3000
+const port = 7000
 
 module.exports = {
   devtool: 'cheap-module-inline-source-map',
