@@ -22,13 +22,13 @@ export const fontFamily = `-apple-system, BlinkMacSystemFont, "Segoe UI",
 export const breakpoints = {
   large: 1170,
   medium: 960,
-  small: 520,
+  small: 620,
 }
 
 export const media = Object.keys(breakpoints)
-  .reduce((acc, label) => {
-    acc[label] = (...args) => css`
-      @media (min-width: ${breakpoints[label]}px) {
+  .reduce((acc, key) => {
+    acc[key] = (...args) => css`
+      @media (min-width: ${breakpoints[key]}px) {
         ${css(...args)}
       }
     `
