@@ -18,16 +18,9 @@ export default () => {
   return (
     <Router>
       <App>
-        <Helmet
-          titleTemplate="%s - React Boilerplate"
-          defaultTitle="React Boilerplate"
-        />
+        <Helmet titleTemplate="%s - React Boilerplate" defaultTitle="React Boilerplate" />
         <Header />
-        <Switch>
-          { routes.map(({ id, ...props }) => (
-            <Route key={id} {...props} />
-          ))}
-        </Switch>
+        <Switch>{routes.map(({ id, ...props }) => <Route key={id} {...props} />)}</Switch>
       </App>
     </Router>
   )
