@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "offline-plugin": "^4.8.4",
+    "offline-plugin": "^4.8.5",
     "polished": "^1.9.0",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.2",
+    "babel-eslint": "^8.0.3",
     "babel-loader": "^7.1.2",
     "babel-plugin-polished": "^1.1.0",
     "babel-plugin-preval": "^1.6.2",
@@ -62,11 +62,11 @@
     "stylelint": "^8.3.1",
     "stylelint-config-strateg": "^1.5.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-processor-styled-components": "^1.1.1",
+    "stylelint-processor-styled-components": "^1.2.0",
     "uglifyjs-webpack-plugin": "^1.1.2",
-    "webpack": "^3.9.1",
+    "webpack": "^3.10.0",
     "webpack-bundle-analyzer": "^2.9.1",
-    "webpack-dev-server": "^2.9.5"
+    "webpack-dev-server": "^2.9.7"
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"]
