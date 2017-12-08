@@ -35,10 +35,12 @@ export const media = Object.keys(breakpoints).reduce((acc, key) => {
 }, {})
 
 export const injectGlobalStyle = () => injectGlobal`
+  /* stylelint-disable */
   ${preval`
     const fs = require('fs')
     module.exports = fs.readFileSync('node_modules/reset-css/reset.css', 'utf8')
   `}
+  /* stylelint-enable */
 
   *,
   *::before,
