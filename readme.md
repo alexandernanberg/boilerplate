@@ -10,20 +10,23 @@
 - Service-worker with [offline-plugin](https://github.com/NekR/offline-plugin)
 
 ## Getting started
-Install
+### Install
 ```bash
 $ yarn install
 ```
 
-Development
+### Development
 ```bash
 $ yarn dev
 ```
 
-Production
+### Production
 ```bash
 $ yarn build && yarn start
 ```
+
+If you want to serve the static files from a server run `npm install -g serve` and then `serve -s dist`.
+
 
 ## Credits
 - [Create React App](https://github.com/facebookincubator/create-react-app)
