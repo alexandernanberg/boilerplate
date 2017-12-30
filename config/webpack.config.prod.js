@@ -62,11 +62,9 @@ module.exports = {
     }),
     new UglifyJsPlugin(),
     new OfflinePlugin({
+      appShell: '/',
       version: '[hash]',
       AppCache: false,
-      ServiceWorker: {
-        navigateFallbackURL: '/',
-      },
     }),
   ],
   performance: {
