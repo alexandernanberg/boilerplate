@@ -4,14 +4,14 @@ import styled from 'styled-components'
 
 const iconMap = preval`
   const fs = require('fs')
-  const path = require('path')
+  const { join, resolve } = require('path')
 
-  const iconPath = path.resolve('public/static/icons')
+  const iconPath = resolve('public/icons')
   const icons = fs.readdirSync(iconPath)
 
   module.exports = icons
     .reduce((acc, file) => {
-      const content = fs.readFileSync(path.join(iconPath, file), 'utf8')
+      const content = fs.readFileSync(join(iconPath, file), 'utf8')
 
       acc[file.slice(0, -4)] = {
         path: /d="(.*?)"/.exec(content)[1],

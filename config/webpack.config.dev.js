@@ -22,8 +22,8 @@ module.exports = {
   },
   output: {
     pathinfo: true,
-    filename: 'static/scripts/[name].js',
-    chunkFilename: 'static/scripts/[name].chunk.js',
+    filename: 'scripts/[name].js',
+    chunkFilename: 'scripts/[name].chunk.js',
     publicPath,
   },
   module: {
