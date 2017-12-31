@@ -1,4 +1,3 @@
-const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPLugin = require('html-webpack-plugin')
 const CleanWebpackPLugin = require('clean-webpack-plugin')
@@ -46,7 +45,7 @@ module.exports = {
     new CleanWebpackPLugin([paths.appBuild], { root: process.cwd() }),
     new CopyWebpackPlugin([
       {
-        from: path.resolve('public'),
+        from: paths.appPublic,
         to: '.',
         ignore: ['index.html'],
       },
@@ -56,8 +55,16 @@ module.exports = {
       template: paths.appHtml,
       inject: true,
       minify: {
+        removeComments: true,
         collapseWhitespace: true,
-        preserveLineBreaks: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
       },
     }),
     new UglifyJsPlugin(),
@@ -65,6 +72,9 @@ module.exports = {
       appShell: '/',
       version: '[hash]',
       AppCache: false,
+      ServiceWorker: {
+        minify: true,
+      },
     }),
   ],
   performance: {
