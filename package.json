@@ -67,17 +67,26 @@
     "webpack-dev-server": "^2.9.7"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "parser": "babel-eslint",
     "extends": "airbnb",
-    "plugins": ["react", "prettier"],
+    "plugins": [
+      "react",
+      "prettier"
+    ],
     "env": {
       "browser": true
     },
     "rules": {
-      "semi": ["error", "never"],
+      "semi": [
+        "error",
+        "never"
+      ],
       "react/jsx-filename-extension": 0,
       "react/prop-types": 0,
       "import/prefer-default-export": 0
@@ -87,8 +96,13 @@
     }
   },
   "stylelint": {
-    "processors": ["stylelint-processor-styled-components"],
-    "extends": ["stylelint-config-strateg", "stylelint-config-styled-components"],
+    "processors": [
+      "stylelint-processor-styled-components"
+    ],
+    "extends": [
+      "stylelint-config-strateg",
+      "stylelint-config-styled-components"
+    ],
     "syntax": "scss"
   }
 }
