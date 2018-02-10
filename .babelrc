@@ -2,8 +2,7 @@
   "presets": [
     ["env", {
       "modules": false,
-      "useBuiltIns": true,
-      "loose": true
+      "useBuiltIns": true
     }],
     "react"
   ],
@@ -11,8 +10,7 @@
     "preval",
     "react-hot-loader/babel",
     "transform-class-properties",
-    "transform-object-rest-spread",
-    "transform-runtime",
+    ["transform-object-rest-spread", { "useBuiltIns": true }],
     "syntax-dynamic-import",
     "styled-components",
     "polished"
