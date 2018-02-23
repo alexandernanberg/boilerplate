@@ -31,7 +31,11 @@ const Svg = styled.svg`
 `
 
 const Icon = ({ name, ...rest }) => (
-  <Svg xmlns="http://www.w3.org/2000/svg" viewBox={iconMap[name].viewBox} {...rest}>
+  <Svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox={iconMap[name].viewBox}
+    {...rest}
+  >
     <path d={iconMap[name].path} />
   </Svg>
 )
