@@ -30,7 +30,7 @@
     "uuid": "^3.2.1"
   },
   "devDependencies": {
-    "@alexandernanberg/react-toolkit": "^1.0.0-alpha.3",
+    "@alexandernanberg/react-toolkit": "^1.0.0-alpha.6",
     "babel-eslint": "^8.2.2",
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
