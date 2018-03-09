@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "react-toolkit",
     "build": "react-toolkit build",
-    "lint": "eslint 'src/**/*.js' && stylelint 'src/**/*.js'; exit 0",
+    "lint": "eslint 'src/**/*.js' && stylelint 'src/**/*.js'",
     "precommit": "lint-staged"
   },
   "lint-staged": {
