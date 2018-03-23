@@ -1,23 +1,5 @@
 import { css, injectGlobal } from 'styled-components'
-
-export const colors = {
-  gray900: '#101010',
-  gray800: '#424242',
-  gray700: '#616161',
-  gray600: '#757575',
-  gray500: '#808080',
-  gray400: '#bdbdbd',
-  gray300: '#e0e0e0',
-  gray200: '#f5f5f5',
-  gray100: '#fcf8f6',
-  red500: '#fb371b',
-  blue500: '#2196f3',
-  orange500: '#f07d43',
-}
-
-export const fontFamily = `-apple-system, BlinkMacSystemFont, "Segoe UI",
-  Roboto, Helvetica, Arial, sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`
+import { reset } from 'styled-reset'
 
 export const breakpoints = {
   large: 1170,
@@ -35,12 +17,22 @@ export const media = Object.keys(breakpoints).reduce((acc, key) => {
 }, {})
 
 export const injectGlobalStyle = () => injectGlobal`
-  /* stylelint-disable */
-  ${preval`
-    const fs = require('fs')
-    module.exports = fs.readFileSync('node_modules/reset-css/reset.css', 'utf8')
-  `}
-  /* stylelint-enable */
+  ${reset} /* stylelint-disable-line */
+
+  :root {
+    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --gray900: #212121;
+    --gray800: #424242;
+    --gray700: #616161;
+    --gray600: #757575;
+    --gray500: #808080;
+    --gray400: #bdbdbd;
+    --gray300: #e0e0e0;
+    --gray200: #f5f5f5;
+    --gray100: #fcf8f6;
+    --red500: #fb371b;
+    --blue500: #2196f3;
+  }
 
   *,
   *::before,
@@ -54,7 +46,7 @@ export const injectGlobalStyle = () => injectGlobal`
   }
 
   body {
-    font-family: ${fontFamily};
+    font-family: var(--font-family);
     -webkit-font-smoothing: antialiased;
   }
 
