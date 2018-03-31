@@ -18,7 +18,7 @@ const NavLink = styled(Link)`
     color: var(--gray900);
   }
 
-  &.${props => props.activeClassName} {
+  &[aria-current='true'] {
     color: var(--gray900);
     text-decoration: line-through;
   }
@@ -26,11 +26,9 @@ const NavLink = styled(Link)`
 
 export default () => (
   <Nav>
-    <NavLink exact to="/" activeClassName="active">
+    <NavLink exact to="/">
       Home
     </NavLink>
-    <NavLink to="/about" activeClassName="active">
-      About
-    </NavLink>
+    <NavLink to="/about">About</NavLink>
   </Nav>
 )
