@@ -6,7 +6,7 @@ import { injectGlobalStyle } from '../style'
 import Header from './Header'
 import Index from '../pages/Index'
 import About from '../pages/About'
-import { PageNotFound } from '../pages/Error'
+import NotFound from '../pages/NotFound'
 
 const App = () => {
   injectGlobalStyle()
@@ -22,7 +22,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Index} />
           <Route path="/about" component={About} />
-          <Route component={PageNotFound} />
+          <Route component={NotFound} />
         </Switch>
       </Fragment>
     </Router>
