@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { hot } from 'react-hot-loader'
 import { injectGlobalStyle } from '../style'
 import Header from './Header'
-import routes from '../routes'
+import Index from '../pages/Index'
+import About from '../pages/About'
+import { PageNotFound } from '../pages/Error'
 
 const App = () => {
   injectGlobalStyle()
@@ -18,7 +20,9 @@ const App = () => {
         />
         <Header />
         <Switch>
-          {routes.map(({ id, ...props }) => <Route key={id} {...props} />)}
+          <Route exact path="/" component={Index} />
+          <Route path="/about" component={About} />
+          <Route component={PageNotFound} />
         </Switch>
       </Fragment>
     </Router>
