@@ -47,6 +47,7 @@ export const injectGlobalStyle = () => injectGlobal`
 
   body {
     font-family: var(--font-family);
+    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
   }
 
