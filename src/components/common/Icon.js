@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import preval from 'preval.macro'
 
 const iconMap = preval`
   const fs = require('fs')
