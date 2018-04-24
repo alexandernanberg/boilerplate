@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import preval from 'preval.macro'
 
 const iconMap = preval`
   const fs = require('fs')
@@ -30,18 +31,18 @@ const Svg = styled.svg`
   pointer-events: none;
 `
 
-const Icon = ({ name, ...rest }) => (
+const Icon = ({ glyph, ...rest }) => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
-    viewBox={iconMap[name].viewBox}
+    viewBox={iconMap[glyph].viewBox}
     {...rest}
   >
-    <path d={iconMap[name].path} />
+    <path d={iconMap[glyph].path} />
   </Svg>
 )
 
 Icon.propTypes = {
-  name: PropTypes.string.isRequired,
+  glyph: PropTypes.string.isRequired,
 }
 
 export default Icon

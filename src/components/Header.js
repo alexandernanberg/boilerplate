@@ -20,7 +20,7 @@ const Logo = styled.div`
 export default () => (
   <Header>
     <Logo>
-      <Icon name="triangle" /> react-boilerplate
+      <Icon glyph="triangle" /> react-boilerplate
     </Logo>
     <Nav />
   </Header>
