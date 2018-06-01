@@ -31,18 +31,18 @@ const Svg = styled.svg`
   pointer-events: none;
 `
 
-const Icon = ({ glyph, ...rest }) => (
-  <Svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox={iconMap[glyph].viewBox}
-    {...rest}
-  >
-    <path d={iconMap[glyph].path} />
-  </Svg>
-)
+export default function Icon({ glyph, ...rest }) {
+  return (
+    <Svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={iconMap[glyph].viewBox}
+      {...rest}
+    >
+      <path d={iconMap[glyph].path} />
+    </Svg>
+  )
+}
 
 Icon.propTypes = {
   glyph: PropTypes.string.isRequired,
 }
-
-export default Icon

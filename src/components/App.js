@@ -23,7 +23,7 @@ const NotFound = Loadable({
   loading: Loader,
 })
 
-const App = () => {
+function App() {
   injectGlobalStyle()
 
   return (

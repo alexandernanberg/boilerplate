@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Icon from './common/Icon'
 import Nav from './Nav'
 
-const Header = styled.header`
+const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,11 +17,13 @@ const Logo = styled.div`
   font-size: 2rem;
 `
 
-export default () => (
-  <Header>
-    <Logo>
-      <Icon glyph="triangle" /> react-boilerplate
-    </Logo>
-    <Nav />
-  </Header>
-)
+export default function Header() {
+  return (
+    <StyledHeader>
+      <Logo>
+        <Icon glyph="triangle" /> react-boilerplate
+      </Logo>
+      <Nav />
+    </StyledHeader>
+  )
+}

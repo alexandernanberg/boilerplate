@@ -2,13 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import { NavLink as Link } from 'react-router-dom'
 
-const Nav = styled.nav`
+const StyledNav = styled.nav`
   display: flex;
   justify-content: center;
 `
 
 const NavLink = styled(Link)`
-  margin: 0 12px;
+  margin: 0 var(--size-2);
   font-size: 1.8rem;
   text-decoration: none;
   color: var(--gray700);
@@ -24,11 +24,13 @@ const NavLink = styled(Link)`
   }
 `
 
-export default () => (
-  <Nav>
-    <NavLink exact to="/">
-      Home
-    </NavLink>
-    <NavLink to="/about">About</NavLink>
-  </Nav>
-)
+export default function Nav() {
+  return (
+    <StyledNav>
+      <NavLink exact to="/">
+        Home
+      </NavLink>
+      <NavLink to="/about">About</NavLink>
+    </StyledNav>
+  )
+}

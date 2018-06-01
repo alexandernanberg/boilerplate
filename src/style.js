@@ -20,7 +20,10 @@ export const injectGlobalStyle = () => injectGlobal`
   ${reset} /* stylelint-disable-line */
 
   :root {
+    /* Font */
     --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+    /* Colors */
     --gray900: #212121;
     --gray800: #424242;
     --gray700: #616161;
@@ -32,6 +35,20 @@ export const injectGlobalStyle = () => injectGlobal`
     --gray100: #fcf8f6;
     --red500: #fb371b;
     --blue500: #2196f3;
+
+    /* Easings */
+    --ease-out-sine: cubic-bezier(0.39, 0.575, 0.565, 1);
+    --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* Sizes */
+    --size-1: 0.8rem;
+    --size-2: 1.2rem;
+    --size-3: 1.6rem;
+    --size-4: 2.4rem;
+    --size-5: 3.2rem;
+    --size-6: 4.8rem;
+    --size-7: 5.6rem;
+    --size-8: 6.4rem;
   }
 
   *,
@@ -49,6 +66,7 @@ export const injectGlobalStyle = () => injectGlobal`
     font-family: var(--font-family);
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   img {
