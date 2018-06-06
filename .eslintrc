@@ -13,8 +13,8 @@
     "browser": true
   },
   "rules": {
-    "semi": ["error", "never"],
     "comma-dangle": ["error", "always-multiline"],
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": true }],
     "react/jsx-filename-extension": 0,
     "react/prop-types": 0,
     "react/sort-comp": ["error", {

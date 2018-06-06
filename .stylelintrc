@@ -5,6 +5,5 @@
   "extends": [
     "stylelint-config-strateg",
     "stylelint-config-styled-components"
-  ],
-  "syntax": "scss"
+  ]
 }
