@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Helmet from 'react-helmet'
 import Loadable from 'react-loadable'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Router } from '@reach/router'
 import { hot } from 'react-hot-loader'
 import { injectGlobalStyle } from '../style'
 import Header from './Header'
@@ -27,22 +27,18 @@ function App() {
   injectGlobalStyle()
 
   return (
-    <Router>
-      <Fragment>
-        <Helmet
-          titleTemplate="%s - React Boilerplate"
-          defaultTitle="React Boilerplate"
-        />
-        <Header />
-        <Switch>
-          <Switch>
-            <Route exact path="/" component={Index} />
-            <Route path="/about" component={About} />
-            <Route component={NotFound} />
-          </Switch>
-        </Switch>
-      </Fragment>
-    </Router>
+    <Fragment>
+      <Helmet
+        titleTemplate="%s - React Boilerplate"
+        defaultTitle="React Boilerplate"
+      />
+      <Header />
+      <Router>
+        <Index path="/" />
+        <About path="/about" />
+        <NotFound default />
+      </Router>
+    </Fragment>
   )
 }
 

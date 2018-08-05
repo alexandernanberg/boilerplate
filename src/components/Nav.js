@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { NavLink as Link } from 'react-router-dom'
+import { Link } from '@reach/router'
 
 const StyledNav = styled.nav`
   display: flex;
@@ -18,7 +18,7 @@ const NavLink = styled(Link)`
     color: var(--gray900);
   }
 
-  &[aria-current='true'] {
+  &[aria-current] {
     color: var(--gray900);
     text-decoration: line-through;
   }
