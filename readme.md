@@ -1,5 +1,8 @@
 # react-boilerplate
-> Minimal react boilerplate
+
+> A minimal react boilerplate
+
+[![License](https://badgen.net/github/license/alexandernanberg/react-boilerplate)](https://github.com/alexandernanberg/react-boilerplate/blob/master/license)
 
 ## Features
 - Routing with [Reach Router](https://github.com/reach/router)
@@ -24,8 +27,6 @@ $ yarn dev
 ```bash
 $ yarn build && yarn start
 ```
-
-If you want to serve the static files from a server run `npm install -g serve` and then `serve -s dist`.
 
 ## Credits & inspiration
 - [Create React App](https://github.com/facebookincubator/create-react-app)
