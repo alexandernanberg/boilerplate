@@ -2,9 +2,9 @@
 > Minimal react boilerplate
 
 ## Features
-- [React Router](https://github.com/ReactTraining/react-router)
-- [React Hot Loader](https://github.com/gaearon/react-hot-loader)
-- [Styled Components](https://github.com/styled-components/styled-components)
+- Routing with [Reach Router](https://github.com/reach/router)
+- Hot loading with [React Hot Loader](https://github.com/gaearon/react-hot-loader)
+- Styling with [Styled Components](https://github.com/styled-components/styled-components)
 - Manage document head with [React Helmet](https://github.com/nfl/react-helmet)
 - Code splitting with [React Loadable](https://github.com/thejameskyle/react-loadable)
 - Service-worker with [Workbox](https://github.com/GoogleChrome/workbox)
@@ -32,4 +32,4 @@ If you want to serve the static files from a server run `npm install -g serve` a
 - [Next.js](https://github.com/zeit/next.js/)
 
 ## License 
-[MIT](license) @ [Alexander Nanberg](https://alexandernanberg.com)
+MIT
