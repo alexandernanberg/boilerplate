@@ -1,0 +1,4 @@
+{
+  "presets": ["react-toolkit/babel"],
+  "plugins": ["babel-plugin-styled-components"]
+}

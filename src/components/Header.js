@@ -1,6 +1,5 @@
-import React from 'react'
 import styled from 'styled-components'
-import Icon from './common/Icon'
+import Icon from './Icon'
 import Nav from './Nav'
 
 const StyledHeader = styled.header`

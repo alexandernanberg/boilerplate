@@ -1,13 +1,12 @@
-import React from 'react'
 import styled from 'styled-components'
-import { Link } from '@reach/router'
+import { NavLink as RouterLink } from 'react-router-dom'
 
 const StyledNav = styled.nav`
   display: flex;
   justify-content: center;
 `
 
-const NavLink = styled(Link)`
+const NavLink = styled(RouterLink)`
   margin: 0 var(--size-2);
   font-size: 1.8rem;
   text-decoration: none;
@@ -27,7 +26,7 @@ const NavLink = styled(Link)`
 export default function Nav() {
   return (
     <StyledNav>
-      <NavLink exact to="/">
+      <NavLink end to="/">
         Home
       </NavLink>
       <NavLink to="/about">About</NavLink>
